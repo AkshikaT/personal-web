@@ -1,0 +1,109 @@
+
+
+/*THE NAVIGATION BAR*/
+html,body {                     /* there is a gap between top of web and nav bar - this gets rid of that */
+    margin: 0;
+    padding: 0;
+}
+nav {
+    display: flex;               /* Enable flexbox */
+    justify-content: space-between; /* Space between the logo and the menu items */
+    align-items: center;
+    margin: 0px;
+    padding: 0px 100px;
+    box-sizing:border-box;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 1000;                /* Ensure nav bar stays on top of other elements */
+    background-image: linear-gradient( rgb(1, 35, 1), rgb(1, 46, 1));
+}
+nav .logo {
+    float: left;
+    width: 200px;
+}
+nav ul {                /* for the items in the nav bar */
+    float: right;
+}
+nav li {
+    display: inline-block;
+    list-style: none;
+}
+nav li a {
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 0px 30px;
+    color: white;
+    text-decoration: none;
+}
+nav li a:hover {
+    color: gray;
+    text-shadow: -2px 0px 0px rgba(0, 0, 0, 1),2px 0px 0px rgba(0, 0, 0, 1),0px -2px 0px rgba(0, 0, 0, 1),0px 2px 0px rgba(0, 0, 0, 1),4px 4px 0px rgb(0, 10, 13);
+    transition: all 0.4s ease 0s; /* kind of like an animation when u over over nav items */
+}
+
+/*this is all for the into header on main page*/
+.intro_header {
+    display: flex;
+    justify-content: center; /*only works when display is flex*/
+}
+.intro_header h1{ 
+    top: 45%;
+    position: absolute;
+    display: inline-block;
+    color: #d8f3dc;
+    font-size: 80px;
+    font-family: "Gowun Batang", serif, monospace; /*make sure monospace font for text animation*/
+    font-weight: 500;
+    font-style: normal;
+    border-right: 5px solid;
+    white-space: nowrap; /* keeps content on one line */
+    overflow: hidden; /* ensures content not revealed until animation */
+    animation:
+        typing 2.5s steps(39),
+        blink-caret .5s step-end infinite; 
+}
+
+@keyframes blink-caret {     /*to make the cursor blink*/
+    from, to { border-color: transparent }
+    50% { border-color: white }
+}
+@keyframes typing {
+    from { width: 0ch; } /* Starts with no width */
+    to { width: 34ch; }  /* Expands exactly to the text's width (adjust `39` to match text length) */
+}
+
+/*designing the horizontal line (divders between the sections) */
+.intro_header hr{
+    border-top: 1px solid black;
+}
+
+
+/* the body of the website */
+body {
+    padding-top: 55%;
+    background-color: rgb(8, 28, 21);
+}
+body h1 {
+    color: white;
+    font-size: 100px;
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+    font-style: normal;
+}
+
+nav {   /* to push the nav bar back to the top after body is padded at the top */
+    margin-top: -55%;
+}
+
+/* the dividers */
+hr {
+    width: 50%;
+    margin: 3em auto;
+  }
+
+
+/* the about me section*/
+.aboutMe {
+    display: inline-block;
+}
